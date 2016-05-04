@@ -741,7 +741,7 @@ int qualifyVar (acfStruct *acfStructure, noiseStruct *noiseStructure, controlStr
 	acfStructure->snr_mean_image = meanM/sqrt(meanMSigma);
 	acfStructure->snr_var_image = meanV/sqrt(meanVSigma);
 			
-	printf ("%d %f %f %f %f %f\n", control.nchan, control.whiteLevel, meanV, meanVSigma, acfStructure.snr_mean_image, acfStructure.snr_var_image);
+	printf ("%d %f %f %f %f %f\n", control->nchan, control->whiteLevel, meanV, meanVSigma, acfStructure->snr_mean_image, acfStructure->snr_var_image);
 	fflush(stdout);
 
 	/*
