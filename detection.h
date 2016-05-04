@@ -740,6 +740,10 @@ int qualifyVar (acfStruct *acfStructure, noiseStruct *noiseStructure, controlStr
 	acfStructure->ratio = (meanM/sqrt(varM))/(meanV/sqrt(varV));
 	acfStructure->snr_mean_image = meanM/sqrt(meanMSigma);
 	acfStructure->snr_var_image = meanV/sqrt(meanVSigma);
+			
+	printf ("%d %f %f %f %f %f\n", control.nchan, control.whiteLevel, meanV, meanVSigma, acfStructure.snr_mean_image, acfStructure.snr_var_image);
+	fflush(stdout);
+
 	/*
 	maxV = find_max_value(n,var);
 	minV = find_min_value(n,var);

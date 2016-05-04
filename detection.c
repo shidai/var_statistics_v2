@@ -108,10 +108,8 @@ int main (int argc, char* argv[])
 
 			qualifyVar (&acfStructure, &noiseStructure, &control);
 
-			//printf ("%f %f %f %f\n", control.bw/control.nchan, acfStructure.snr_mean, acfStructure.snr_var, acfStructure.ratio);
-			printf ("%d %f %f %f %f %f %f\n", control.nchan, control.whiteLevel, acfStructure.snr_mean, acfStructure.snr_var, acfStructure.ratio, acfStructure.snr_mean_image, acfStructure.snr_var_image);
-			fflush(stdout);
-			//fprintf (fin, "%lf %lf %lf %f\n", tdiff, fdiff, control.cFlux, acfStructure.probability);
+			//printf ("%d %f %f %f %f %f %f\n", control.nchan, control.whiteLevel, acfStructure.snr_mean, acfStructure.snr_var, acfStructure.ratio, acfStructure.snr_mean_image, acfStructure.snr_var_image);
+			//fflush(stdout);
 			deallocateMemory (&acfStructure, &noiseStructure);
 		}
 
