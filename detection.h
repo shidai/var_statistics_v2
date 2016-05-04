@@ -268,7 +268,8 @@ int simPsr (acfStruct *acfStructure, long seed, int k)
 				noise = TKgaussDev(&seed);
 				//printf ("%f %f %f\n", re, im, noise);
 				//acfStructure->dynPlot[k][i*nsubint+j] = (float)(2.0*(pow(re,2.0)+pow(im,2.0))+16*noise);  
-				acfStructure->dynPlot[k][i*nsubint+j] = (float)(2.0*(pow(re,2.0)+pow(im,2.0))+acfStructure->whiteLevel*noise);  
+				acfStructure->dynPlot[k][i*nsubint+j] = (float)(acfStructure->cFlux*0.5*(pow(re,2.0)+pow(im,2.0))+acfStructure->whiteLevel*noise);  
+				//acfStructure->dynPlot[k][i*nsubint+j] = (float)(2.0*(pow(re,2.0)+pow(im,2.0))+acfStructure->whiteLevel*noise);  
 				//acfStructure->dynPlot[k][i*nsubint+j] = (float)(((bw/vdiss)/nchn)*2.0*(pow(re,2.0)+pow(im,2.0))+acfStructure->whiteLevel*noise);  
 			}
 		}
@@ -448,7 +449,7 @@ void initialiseControl(controlStruct *control)
 	control->nsub = 100;
 	control->whiteLevel0 = 0.01;   // mJy
 	control->whiteLevel = 1;   // mJy
-	control->cFlux = 0.0;   // mJy
+	control->cFlux = 1.0;   // mJy
 }
 
 //void heatMap (acfStruct *acfStructure, char *dname)
