@@ -288,7 +288,8 @@ int simPsr (acfStruct *acfStructure, long seed, int k)
 					im = TKgaussDev(&seed);
 					noise = TKgaussDev(&seed);
 					//sum += 2.0*(pow(re,2.0)+pow(im,2.0))+acfStructure->whiteLevel*noise;
-					sum += 2.0*(pow(re,2.0)+pow(im,2.0));
+					//sum += 2.0*(pow(re,2.0)+pow(im,2.0));
+					sum += acfStructure->cFlux*0.5*(pow(re,2.0)+pow(im,2.0));
 				}
 				sum = sum/((bw/vdiss)/nchn);
 
